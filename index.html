@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>bzzz!</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/x-icon" href="/static/cool_bee.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="main flex col center half-transparent rounded">
+        <div class="header flex row margin">
+            <img src="static/logo.png" class="img">
+            <img src="static/cool_bee.png" class="img right-side">
+        </div>
+        <p class="white margin shadow">A cool Minecraft server based on <a href="https://www.curseforge.com/minecraft/modpacks/all-the-mods-10">All The Mods 10</a> pack.</p>
+        <p class="white margin shadow">Current version: 4.4 (1.21.1)</p>
+        <div class="white margin shadow">
+            <h3>Start playing</h3>
+            <ol>
+                <li>Download <a href="https://prismlauncher.org/">Prism Launcher</a> (<a href="https://github.com/antunnitraj/Prism-Launcher-PolyMC-Offline-Bypass">online fix</a>)</li>
+                <li>Add Instance -> Import -> Paste <a href="/static/pcho.la.zip" onclick="navigator.clipboard.writeText(this.href); return false;">link</a> (click to copy)</li>
+                <li>Enjoy and bee our guest!</li>
+            </ol>
+        </div>
+        <p class="gray margin right-side bottom">by Myp3a | <a href="https://github.com/Myp3a">git</a> | <a href="https://t.me/Myp3a"> tg</a></p>
+    </div>
+    <div class="bg center">
+        <div class="darken center full"></div>
+        <div class="blur center"></div>
+    </div>
+    <canvas id="c" class="full"></canvas>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

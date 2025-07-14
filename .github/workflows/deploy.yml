@@ -1,0 +1,31 @@
+name: site deploy
+on: 
+  push:
+    branches:
+      - 'master'
+jobs:
+  build:
+    name: ssh install
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        cache: 'npm'
+    - name: dependencies setup
+      run: npm install
+    - name: build
+      run: npx vite build
+    - name: push to server
+      uses: appleboy/scp-action@v1
+      with:
+        host: pcho.la
+        port: ${{ secrets.PORT }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        source: dist/*
+        target: /srv/http
+        strip_components: 1
